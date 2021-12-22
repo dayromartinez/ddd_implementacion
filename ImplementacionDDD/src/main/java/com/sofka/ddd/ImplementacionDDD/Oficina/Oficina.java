@@ -7,7 +7,7 @@ import com.sofka.ddd.ImplementacionDDD.Cliente.values.Nombre;
 import com.sofka.ddd.ImplementacionDDD.Cliente.values.UsuarioId;
 import com.sofka.ddd.ImplementacionDDD.Impresora.Impresora;
 import com.sofka.ddd.ImplementacionDDD.Impresora.values.Dimensiones;
-import com.sofka.ddd.ImplementacionDDD.Oficina.events.OficinaCreada;
+import com.sofka.ddd.ImplementacionDDD.Oficina.events.*;
 import com.sofka.ddd.ImplementacionDDD.Oficina.values.*;
 import org.springframework.beans.factory.parsing.EmptyReaderEventListener;
 
@@ -40,7 +40,7 @@ public class Oficina extends AggregateEvent<OficinaId> {
 
     public void actualizarDimensiones(Dimensiones dimensiones){
         Objects.requireNonNull(dimensiones);
-        appendChange(new DimensionesActualizadas(dimensiones)).apply();
+        appendChange(new DimensionesActualizadasOficina(dimensiones)).apply();
     }
 
     public void actualizarCapacidad(Capacidad capacidad){
@@ -51,19 +51,19 @@ public class Oficina extends AggregateEvent<OficinaId> {
     public void actualizarNombreEmpleado(EmpleadoId empleadoId, Nombre nombre){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(nombre);
-        appendChange(new NombreEmpleadoActualizado(nombre)).apply();
+        appendChange(new NombreEmpleadoActualizado(empleadoId, nombre)).apply();
     }
 
     public void actualizarApellidoEmpleado(EmpleadoId empleadoId, Apellido apellido){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(apellido);
-        appendChange(new ApellidoEmpleadoActualizado(apellido)).apply();
+        appendChange(new ApellidoEmpleadoActualizado(empleadoId, apellido)).apply();
     }
 
     public void actualizarAreaDeTrabajoEmpleado(EmpleadoId empleadoId, AreaDeTrabajo areaDeTrabajo){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(areaDeTrabajo);
-        appendChange(new AreaDeTrabajoEmpleadoActualizado(areaDeTrabajo)).apply();
+        appendChange(new AreaDeTrabajoEmpleadoActualizado(empleadoId, areaDeTrabajo)).apply();
     }
 
     public Optional<Empleado> getEmpleadoPorId(EmpleadoId empleadoId){

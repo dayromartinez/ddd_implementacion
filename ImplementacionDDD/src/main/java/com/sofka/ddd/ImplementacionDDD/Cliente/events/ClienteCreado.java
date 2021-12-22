@@ -17,4 +17,16 @@ public class ClienteCreado extends DomainEvent {
         this.apellido = apellido;
         this.celular = celular;
     }
+
+    public Nombre getNombre() {
+        return nombre;
+    }
+
+    public Apellido getApellido() {
+        return apellido;
+    }
+
+    public Celular getCelular() {
+        return celular;
+    }
 }

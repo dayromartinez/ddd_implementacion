@@ -1,8 +1,7 @@
 package com.sofka.ddd.ImplementacionDDD.Impresora;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import com.sofka.ddd.ImplementacionDDD.Cliente.values.ClienteId;
-import com.sofka.ddd.ImplementacionDDD.Impresora.events.ImpresoraCreada;
+import com.sofka.ddd.ImplementacionDDD.Impresora.events.*;
 import com.sofka.ddd.ImplementacionDDD.Impresora.values.*;
 
 import java.util.List;

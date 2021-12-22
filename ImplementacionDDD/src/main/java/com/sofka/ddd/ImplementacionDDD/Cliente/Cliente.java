@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import com.sofka.ddd.ImplementacionDDD.Cliente.events.ClienteCreado;
+import com.sofka.ddd.ImplementacionDDD.Cliente.events.*;
 import com.sofka.ddd.ImplementacionDDD.Cliente.values.*;
 import com.sofka.ddd.ImplementacionDDD.Impresora.ObjetoImpreso;
 
